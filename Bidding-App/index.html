@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bid App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#b7b7a4] flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-[#ddbea9] p-8 rounded-lg shadow-lg max-w-lg w-full">
+        <h1 class="text-4xl font-bold mb-6 text-black">Bid App</h1>
+        
+        <!-- Bids Container -->
+        <div id="bids-container" class="border border-black bg-gray-50 p-4 rounded-lg mb-6 min-h-[100px]">
+            <!-- Bids will be dynamically added here -->
+        </div>
+
+        <!-- Bidder 1 Section -->
+        <div class="flex items-center space-x-2 mb-4">
+            <label for="bidder1-input" class="text-black">Bidder 1:</label>
+            <input type="text" id="bidder1-input" class="flex-1 border border-black rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button id="bidder1-button" class="bg-[#6b705c] text-black px-4 py-2 rounded-md hover:bg-gray-300 transition-colors">Place Bid</button>
+        </div>
+
+        <!-- Bidder 2 Section -->
+        <div class="flex items-center space-x-2 mb-4">
+            <label for="bidder2-input" class="text-black">Bidder 2:</label>
+            <input type="text" id="bidder2-input" class="flex-1 border border-black rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button id="bidder2-button" class="bg-[#6b705c] text-black px-4 py-2 rounded-md hover:bg-gray-300 transition-colors">Place Bid</button>
+        </div>
+
+        <!-- Clear Bids Button -->
+        <div class="mb-6">
+            <button id="clear-bids-button" class="bg-[#6b705c] text-black px-4 py-2 rounded-md hover:bg-gray-300 transition-colors">Clear Bids</button>
+        </div>
+
+        <!-- Highest Bidder Section -->
+        <div id="highest-bidder-container" class="bg-[#6b705c] p-4 rounded-lg min-h-[50px]">
+            <!-- Highest bidder info will be dynamically added here -->
+        </div>
+    </div>
