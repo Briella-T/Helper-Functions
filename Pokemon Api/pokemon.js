@@ -6,7 +6,7 @@ let pokemonData = [];
 
 async function fetchPokemon() {
     try {
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -38,9 +38,23 @@ function displayPokemonDetails(pokemon) {
         <p class="mb-2"><strong>Weight:</strong> ${pokemon.weight}</p>
         <p class="mb-2"><strong>Types:</strong> ${pokemon.types.map(typeInfo => typeInfo.type.name).join(", ")}</p>
         <p class="mb-2"><strong>Abilities:</strong> ${pokemon.abilities.map(abilityInfo => abilityInfo.ability.name).join(", ")}</p>
-    `;
-}
+        <button id="previous-btn" class="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Previous</button>
+        <button id="next-btn" class="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Next</button>
 
+    `;
+    document.getElementById("previous-btn")?.addEventListener("click", () => {
+        const currentIndex = pokemonData.findIndex(p => p.name === pokemonInfo.querySelector("h2").textContent);
+        if (currentIndex < pokemonData.length - 1) {
+            fetchPokemonDetails(pokemonData[currentIndex - 1].url);
+        }
+    });
+    document.getElementById("next-btn")?.addEventListener("click", () => {
+        const currentIndex = pokemonData.findIndex(p => p.name === pokemonInfo.querySelector("h2").textContent);
+        if (currentIndex < pokemonData.length - 1) {
+            fetchPokemonDetails(pokemonData[currentIndex + 1].url);
+        }
+    });
+}
 async function fetchPokemonDetails(url) {
     try {
         const response = await fetch(url);
