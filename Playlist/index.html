@@ -20,7 +20,6 @@
         
         <h1 class="text-3xl font-extrabold text-[#582f0e] mb-6">Music Player</h1>
 
-        <!-- Song Title Display -->
         <div class="mb-8 p-4 bg-[#a4ac8699] rounded-lg border border-[#414833]">
             <p class="text-lg font-semibold text-[#414833]">Now Playing:</p>
             <p class="text-2xl font-bold text-[#582f0e] mt-1" id="song-name">
@@ -28,21 +27,16 @@
             </p>
         </div>
 
-        <!-- Controls Container -->
         <div class="flex justify-center items-center space-x-6">
             
-            <!-- Previous Button -->
             <button id="prev-button" class="text-[#414833] hover:text-[#333d29] transition-colors p-2 rounded-full" aria-label="Previous Song">
                 <i class="fas fa-backward text-2xl"></i>
             </button>
 
-            <!-- Play/Pause Button (Primary Action) -->
             <button class="bg-[#414833] text-white hover:bg-[#333d29] transition-colors shadow-lg shadow-[#414833] w-16 h-16 rounded-full flex items-center justify-center" aria-label="Play/Pause">
-                <!-- Start with Play icon, easily toggle to Pause icon in JS -->
                 <i class="fas fa-play text-2xl"></i>
             </button>
 
-            <!-- Next Button -->
             <button id="next-button" class="text-[#414833] hover:text-[#333d29] transition-colors p-2 rounded-full" aria-label="Next Song">
                 <i class="fas fa-forward text-2xl"></i>
             </button>
