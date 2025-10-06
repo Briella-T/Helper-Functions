@@ -2,11 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FizzBuzz Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz App</title>
     <script src="Day_7_fizzbuzz.js" defer></script>
 </head>
 <body>
-    <button id="fizzbuzz-btn">Run FizzBuzz</button>
-    <div id="containter"></div>
+
+    <div class="container">
+        <h1>The FizzBuzz Challenge</h1>
+        <p>Sequence will run from 1 up to the limit specified below.</p>
+        
+        <label for="limit">Enter Limit:</label>
+        <input type="number" id="limit" value="100" min="1">
+        
+        <button id="runButton">Run FizzBuzz</button>
+        
+        <h2>Results:</h2>
+        <ol id="fizzbuzzList"></ol>
+    </div>
+
+
 </body>
 </html>

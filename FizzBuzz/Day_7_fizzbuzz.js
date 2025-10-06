@@ -1,54 +1,37 @@
-//button addEventListener
-//const buttonClicked = document.getElementById ('button')
+function runFizzBuzz() {
+    const limitInput = document.getElementById('limit');
+    const limit = parseInt(limitInput.value) || 100;
 
-//buttonClicked.addEventListener("click", function(){
-   // console.log('Button Clicked')
-//})
+    const resultList = document.getElementById('fizzbuzzList');
+    resultList.innerHTML = '';
 
-//Fizz Buzz Assignment
+    for (let i = 1; i <= limit; i++) {
+        let output = '';
 
-const buttonClicked = document.getElementById ('fizzbuzz-btn')
+        if (i % 3 === 0 && i % 5 === 0) {
+            output = 'FizzBuzz';
+        } 
+        else if (i % 3 === 0) {
+            output = 'Fizz';
+        } 
+        else if (i % 5 === 0) {
+            output = 'Buzz';
+        } 
+        else {
+            output = i.toString();
+        }
 
-buttonClicked.addEventListener("click", function(){
-    this.innerHTML = "1,2,3,4"
-})
+        const listItem = document.createElement('li');
+        listItem.textContent = output;
 
-//Amazon project help
+        if (output !== i.toString()) {
+            listItem.className = 'fizzbuzz-result';
+        }
 
-/*class Product {
-    constructor(name, description, price) {
-        this.name = name;
-        this.description = description;
-        this.price = price;
+        resultList.appendChild(listItem);
     }
-    render(parent) { //parent will be the html container
-        const product = document.createElement('div');
-        product.innerHTML = `
-        <h2>${this.name}</h2>
-        <p>${this.description}</p>
-        <strong>$${this.toFixed(2)}</strong>`;
-        parent.appendChild(product);
-    }
 }
 
-//app.js
-import Product from "./Produc.js"; type = 'Module"
-productContainer = document.getElementById('product-container')
-
-const product1 = new Product("Laptop", "A high performance", "999.99")
-product1.render(productContainer);
-
-//Cart.js
-class Cart {
-constructor(){
-    this.items = [];
-}
-get total(){
-    return this.items.reduce((sum, items))
-}
-
-}
-
-*/
+document.getElementById('runButton').addEventListener('click', runFizzBuzz);
 
 
